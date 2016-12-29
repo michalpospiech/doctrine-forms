@@ -1,0 +1,26 @@
+{
+  "name": "mpospiech/doctrine-forms",
+  "type": "library",
+  "keywords": ["nette", "doctrine", "forms"],
+  "license": "MIT License",
+  "authors": [
+    {
+      "name": "Michal Pospiech",
+      "email": "michal@pospiech.cz"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "mpospiech\\Doctrine\\Forms\\": "src/"
+    }
+  },
+  "require": {
+    "php": ">= 5.4",
+    "kdyby/doctrine": "~3",
+    "nette/utils": "~2",
+    "nette/forms": "~2",
+    "nette/application": "~2",
+    "nette/di": "~2",
+    "tracy/tracy": "~2"
+  }
+}
