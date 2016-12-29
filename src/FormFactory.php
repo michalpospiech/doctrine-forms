@@ -180,7 +180,7 @@ abstract class FormFactory extends Object implements IFormFactory
 	 * @param Form $form
 	 * @param $values
 	 */
-	protected final function success(Form $form, $values)
+	public final function success(Form $form, $values)
 	{
 		$this->onBeforeSuccess($values, $this->entity, $form);
 
