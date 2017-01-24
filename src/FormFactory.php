@@ -245,6 +245,12 @@ abstract class FormFactory extends Object implements IFormFactory
 			// v pripade, ze zname ID z formulare, ale entita je prazdna, tak nastavime
 			if (!$this->entity->getId() && $valueId) {
 				$this->prepareEntity($this->entityName, $valueId);
+
+				if (!$this->entity) {
+					$entityName = $this->entityName;
+					$this->entity = new $entityName();
+					$this->entity->setId($valueId);
+				}
 			}
 
 			$entityMapping = $this->repository->getClassMetadata()->getAssociationMappings();
