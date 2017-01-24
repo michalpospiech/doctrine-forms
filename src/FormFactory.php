@@ -9,6 +9,7 @@ namespace mpospiech\Doctrine\Forms;
 
 
 use Doctrine\ORM\Mapping\MappingException;
+use DusanKasan\Knapsack\Collection;
 use Kdyby\Doctrine;
 use Kdyby\Doctrine\Collections\ReadOnlyCollectionWrapper;
 use Nette\Application\UI;
@@ -253,13 +254,15 @@ abstract class FormFactory extends Object implements IFormFactory
 				}
 			}
 
-			$values = array_filter($values, function ($key) use ($form) {
-				if (!isset($form[$key])) {
-					return true;
-				}
+			$values = Collection::from($values)
+				->filter(function ($value, $key) use ($form) {
+					if (!isset($form[$key])) {
+						return true;
+					}
 
-				return $form[$key]->getOption('autoSet', true);
-			}, ARRAY_FILTER_USE_KEY);
+					return $form[$key]->getOption('autoSet', true);
+				})
+				->toArray();
 
 			$entityMapping = $this->repository->getClassMetadata()->getAssociationMappings();
 			foreach ($values as $key => $val) {
