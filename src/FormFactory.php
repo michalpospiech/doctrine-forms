@@ -29,7 +29,7 @@ abstract class FormFactory extends Object implements IFormFactory
 {
 
 	/** @var Doctrine\EntityManager */
-	private $entityManager;
+	protected $entityManager;
 
 	/** @var UI\ITemplateFactory */
 	private $templateFactory;
