@@ -374,6 +374,11 @@ abstract class FormFactory extends Object implements IFormFactory
 					continue;
 				}
 
+				// pokud se nema predvyplnovat vychozi hodnota, jdeme dal
+				if (!$component->getOption('setDefaultValue', true)) {
+					continue;
+				}
+
 				// definujeme vychozi hodnoty
 				$value = method_exists($this->entity, 'get' . $key) ? $this->entity->{'get' . $key}() : $this->entity->$key;
 				if (Validators::is($value, 'bool')) {
