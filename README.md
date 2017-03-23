@@ -126,3 +126,14 @@ class BaseFormWithTemplateFactory extends \mpospiech\Doctrine\Forms\FormFactory 
     </div>
 {/form}
 ```
+
+#### Nastavování jednotlivých formulářových komponent
+```php
+// vypnute uložení hodnoty do databáze
+$form->addText('name', 'nameValue')
+    ->setOption('autoSet', false);
+
+// vypnuté nastavení výchozí hodnoty
+$form->addText('name', 'nameValue')
+    ->setOption('setDefaultValue', false);
+```
