@@ -127,6 +127,7 @@ class BaseFormWithTemplateFactory extends \mpospiech\Doctrine\Forms\FormFactory 
 {/form}
 ```
 
+### Rozšířené nastavení formuláře
 #### Nastavování jednotlivých formulářových komponent
 ```php
 // vypnute uložení hodnoty do databáze
