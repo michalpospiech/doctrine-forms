@@ -91,7 +91,7 @@ class BaseFormWithTemplateFactory extends \mpospiech\Doctrine\Forms\FormFactory 
 	{
 		parent::__construct($entityManager, $templateFactory);
 
-		$this->setTemplate(__DIR__ . '/baseForm.latte');
+		$this->setTemplate(__DIR__ . '/baseForm.latte', ['variable' => 'valueVariable']);
 	}
 
 	public function setupForm(\Nette\Forms\Form $form) {
