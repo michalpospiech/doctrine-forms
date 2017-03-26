@@ -34,6 +34,9 @@ abstract class FormFactory extends Object implements IFormFactory
 	/** @var UI\ITemplateFactory */
 	private $templateFactory;
 
+	/** @var array */
+	private $templateVariables = [];
+
 	/** @var Doctrine\QueryBuilder */
 	protected $queryBuilder;
 
@@ -112,14 +115,16 @@ abstract class FormFactory extends Object implements IFormFactory
 	 * Nastavi individualni sablonu formulare
 	 *
 	 * @param string $file
+	 * @param array $vars
 	 */
-	public function setTemplate($file)
+	public function setTemplate($file, array $vars = [])
 	{
 		if (!is_file($file)) {
 			throw new InvalidArgumentException('Missing template file ' . $file);
 		}
 
 		$this->templateFile = $file;
+		$this->templateVariables = $vars;
 	}
 
 	public function getForm()
@@ -476,7 +481,7 @@ abstract class FormFactory extends Object implements IFormFactory
 		$formRenderer = new FormRenderer($this->labelCols, $this->controlCols);
 		$formRenderer->setAjax($this->isAjax);
 		if ($this->templateFile) {
-			$formRenderer->setTemplate($this->templateFile, $this->templateFactory);
+			$formRenderer->setTemplate($this->templateFile, $this->templateVariables, $this->templateFactory);
 		}
 		$this->form->setRenderer($formRenderer);
 	}

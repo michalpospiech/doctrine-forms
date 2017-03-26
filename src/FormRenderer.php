@@ -59,6 +59,11 @@ class FormRenderer extends DefaultFormRenderer
 	 */
 	private $templateFile;
 
+	/**
+	 * @var array
+	 */
+	private $templateVariables = [];
+
 	public function __construct($labelCols = 3, $controlCols = 9, $ajax = false)
 	{
 		$this->labelCols = $labelCols;
@@ -74,9 +79,10 @@ class FormRenderer extends DefaultFormRenderer
 		$this->wrappers['control']['errorcontainer'] = 'span class=help-block';
 	}
 
-	public function setTemplate($templateFile, ITemplateFactory $templateFactory)
+	public function setTemplate($templateFile, array $templateVariables = [], ITemplateFactory $templateFactory)
 	{
 		$this->templateFactory = $templateFactory;
+		$this->templateVariables = $templateVariables;
 		if (is_file($templateFile)) {
 			$this->templateFile = $templateFile;
 		}
@@ -101,6 +107,10 @@ class FormRenderer extends DefaultFormRenderer
 			$template->setFile($this->templateFile);
 			$template->form = $this->form;
 			$template->mode = $mode;
+
+			foreach ($this->templateVariables as $var => $value) {
+				$template->add($var, $value);
+			}
 
 			return $template;
 		} else {
