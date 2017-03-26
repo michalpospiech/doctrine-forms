@@ -320,7 +320,7 @@ abstract class FormFactory extends Object implements IFormFactory
 						continue;
 					}
 
-					$query->leftJoin(sprintf('t.%s', $associationName), sprintf('t.%d', $i));
+					$query->leftJoin(sprintf('t.%s', $associationName), sprintf('t%d', $i));
 					$query->addSelect(sprintf('t%d', $i));
 
 					$this->mapping[$associationName] = $this->repository->getClassMetadata()->getSingleAssociationJoinColumnName($associationName);
