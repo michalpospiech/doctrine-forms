@@ -16,7 +16,7 @@ services:
 	- App\Forms\BaseFormWithTemplateFactory
 ```
 
-### Vytvoření komponenty formuláře v Presenteru
+### Vytvoření komponenty formuláře v presenteru
 ```php
 class FormPresenter extends \Nette\Application\UI\Presenter {
 	/** @var BaseFormFactory @inject */
