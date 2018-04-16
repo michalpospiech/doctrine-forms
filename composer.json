@@ -17,14 +17,11 @@
   "require": {
     "php": ">= 5.4",
     "kdyby/doctrine": "~3",
-    "nette/utils": "~2",
+    "nette/utils": ">=2.4",
     "nette/forms": "~2",
     "nette/application": "~2",
     "nette/di": "~2",
     "tracy/tracy": "~2",
     "dusank/knapsack": "~8.3"
-  },
-  "conflict": {
-    "nette/utils": "<2.4"
   }
 }
