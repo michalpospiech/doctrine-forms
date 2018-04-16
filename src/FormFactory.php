@@ -20,13 +20,15 @@ use Nette\Forms\Controls\TextBase;
 use Nette\Forms\Form;
 use Nette\Forms\Rule;
 use Nette\InvalidArgumentException;
-use Nette\Object;
+use Nette\SmartObject;
 use Nette\Utils\Validators;
 use Tracy\Debugger;
 use Tracy\ILogger;
 
-abstract class FormFactory extends Object implements IFormFactory
+abstract class FormFactory implements IFormFactory
 {
+
+	use Nette\SmartObject;
 
 	/** @var Doctrine\EntityManager */
 	protected $entityManager;

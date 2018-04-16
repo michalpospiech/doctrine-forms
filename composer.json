@@ -23,5 +23,8 @@
     "nette/di": "~2",
     "tracy/tracy": "~2",
     "dusank/knapsack": "~8.3"
+  },
+  "conflict": {
+    "nette/utils": "<2.4"
   }
 }
