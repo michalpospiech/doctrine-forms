@@ -28,7 +28,7 @@ use Tracy\ILogger;
 abstract class FormFactory implements IFormFactory
 {
 
-	use Nette\SmartObject;
+	use SmartObject;
 
 	/** @var Doctrine\EntityManager */
 	protected $entityManager;
