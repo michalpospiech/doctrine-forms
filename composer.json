@@ -2,7 +2,7 @@
   "name": "mpospiech/doctrine-forms",
   "type": "library",
   "keywords": ["nette", "doctrine", "forms"],
-  "license": "MIT License",
+  "license": ["GPL-2.0", "GPL-3.0"],
   "authors": [
     {
       "name": "Michal Pospiech",
