@@ -15,13 +15,13 @@
     }
   },
   "require": {
-    "php": ">= 5.4",
+    "php": ">= 7.1",
     "kdyby/doctrine": "~3",
-    "nette/utils": ">=2.4",
-    "nette/forms": "~2",
-    "nette/application": "~2",
-    "nette/di": "~2",
-    "tracy/tracy": "~2",
+    "nette/utils": "^2.5",
+    "nette/forms": "^2.4",
+    "nette/application": "^2.4",
+    "nette/di": "^2.4",
+    "tracy/tracy": "^2.6",
     "dusank/knapsack": "~8.3"
   }
 }
